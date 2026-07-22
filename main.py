@@ -3,6 +3,8 @@ from rich.console import Console
 from rich.table import Table
 from rich.panel import Panel
 from collections import Counter
+from charts import gerar_grafico
+from report import gerar_relatorio
 
 console = Console()
 
@@ -74,6 +76,18 @@ if dados:
         estatisticas.add_row(linguagem, str(quantidade))
 
     console.print(estatisticas)
+    gerar_grafico(contador)
+    gerar_relatorio(dados, contador)
+
+    console.print(
+        "\n📄 PDF salvo em reports/",
+        style="bold green"
+    )
+
+    console.print(
+        "\n📊 Gráfico salvo em: images/languages_chart.png",
+        style="bold green"
+    )
 
     if contador:
         linguagem_principal = contador.most_common(1)[0]
