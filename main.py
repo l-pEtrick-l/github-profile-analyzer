@@ -1,14 +1,10 @@
-import requests
+from github_api import buscar_usuario
 
 usuario = input("Digite um usuário do GitHub: ")
 
-url = f"https://api.github.com/users/{usuario}"
+dados = buscar_usuario(usuario)
 
-resposta = requests.get(url)
-
-if resposta.status_code == 200:
-    dados = resposta.json()
-
+if dados:
     print(f"Nome: {dados['name']}")
     print(f"Login: {dados['login']}")
     print(f"Seguidores: {dados['followers']}")
