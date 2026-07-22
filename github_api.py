@@ -10,3 +10,12 @@ def buscar_usuario(usuario):
         return resposta.json()
 
     return None
+
+
+def buscar_repositorios(usuario):
+    resposta = requests.get(f"{BASE_URL}/{usuario}/repos")
+
+    if resposta.status_code == 200:
+        return resposta.json()
+
+    return []

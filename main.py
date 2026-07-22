@@ -1,4 +1,4 @@
-from github_api import buscar_usuario
+from github_api import buscar_usuario, buscar_repositorios
 from rich.console import Console
 from rich.table import Table
 from rich.panel import Panel
@@ -37,6 +37,24 @@ if dados:
     tabela.add_row("Perfil", str(dados["html_url"]))
 
     console.print(tabela)
+    repositorios = buscar_repositorios(usuario)
+
+    tabela_repos = Table(title="Repositórios Públicos")
+
+    tabela_repos.add_column("Nome", style="cyan")
+    tabela_repos.add_column("Linguagem", style="green")
+    tabela_repos.add_column("⭐ Stars", justify="center")
+    tabela_repos.add_column("🍴 Forks", justify="center")
+
+    for repo in repositorios:
+        tabela_repos.add_row(
+            repo["name"],
+            str(repo["language"]),
+            str(repo["stargazers_count"]),
+            str(repo["forks_count"])
+    )
+
+    console.print(tabela_repos)
 
 else:
 
