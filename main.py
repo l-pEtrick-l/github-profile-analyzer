@@ -5,6 +5,7 @@ from rich.panel import Panel
 from collections import Counter
 from charts import gerar_grafico
 from report import gerar_relatorio
+from export import exportar_json
 
 console = Console()
 
@@ -79,6 +80,12 @@ if dados:
     gerar_grafico(contador)
     gerar_relatorio(dados, contador)
 
+    exportar_json(dados, repositorios, contador)
+
+    console.print(
+        "📁 JSON salvo em exports/",
+        style="bold green"
+    )
     console.print(
         "\n📄 PDF salvo em reports/",
         style="bold green"

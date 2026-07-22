@@ -1,0 +1,47 @@
+{
+    "profile": {
+        "name": "Bryan Petrick",
+        "login": "l-pEtrick-l",
+        "followers": 0,
+        "following": 0,
+        "public_repositories": 5,
+        "profile_url": "https://github.com/l-pEtrick-l"
+    },
+    "languages": {
+        "Python": 1,
+        "PHP": 1,
+        "CSS": 1
+    },
+    "repositories": [
+        {
+            "name": "evolution-api",
+            "language": null,
+            "stars": 0,
+            "forks": 0
+        },
+        {
+            "name": "github-profile-analyzer",
+            "language": "Python",
+            "stars": 0,
+            "forks": 0
+        },
+        {
+            "name": "l-pEtrick-l",
+            "language": null,
+            "stars": 0,
+            "forks": 0
+        },
+        {
+            "name": "restaurant-case-study",
+            "language": "PHP",
+            "stars": 0,
+            "forks": 0
+        },
+        {
+            "name": "SteamAPI",
+            "language": "CSS",
+            "stars": 0,
+            "forks": 0
+        }
+    ]
+}
