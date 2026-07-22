@@ -2,6 +2,7 @@ from github_api import buscar_usuario, buscar_repositorios
 from rich.console import Console
 from rich.table import Table
 from rich.panel import Panel
+from collections import Counter
 
 console = Console()
 
@@ -55,6 +56,32 @@ if dados:
     )
 
     console.print(tabela_repos)
+    # Coleta as linguagens dos repositórios
+    linguagens = []
+
+    for repo in repositorios:
+        if repo["language"]:
+            linguagens.append(repo["language"])
+
+    contador = Counter(linguagens)
+
+    estatisticas = Table(title="Estatísticas das Linguagens")
+
+    estatisticas.add_column("Linguagem", style="cyan")
+    estatisticas.add_column("Quantidade", justify="center")
+
+    for linguagem, quantidade in contador.most_common():
+        estatisticas.add_row(linguagem, str(quantidade))
+
+    console.print(estatisticas)
+
+    if contador:
+        linguagem_principal = contador.most_common(1)[0]
+
+    console.print(
+        f"\n🏆 Linguagem mais utilizada: [bold green]{linguagem_principal[0]}[/bold green] "
+        f"({linguagem_principal[1]} repositórios)"
+    )
 
 else:
 
