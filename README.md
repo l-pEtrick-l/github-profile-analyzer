@@ -42,15 +42,15 @@ GitHub REST API
 
 ## Terminal
 
-![Terminal](assets/terminal.png)
+![Terminal](assets/terminal.jpeg)
 
 ## Language Chart
 
-![Chart](assets/chart.png)
+![Chart](assets/chart.jpeg)
 
 ## PDF Report
 
-![PDF](assets/pdf.png)
+![PDF](assets/pdf.jpeg)
 
 ## Installation
 
