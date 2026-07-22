@@ -2,6 +2,7 @@ import requests
 
 BASE_URL = "https://api.github.com/users"
 
+
 def buscar_usuario(usuario):
     resposta = requests.get(f"{BASE_URL}/{usuario}")
 
